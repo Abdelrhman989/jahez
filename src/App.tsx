@@ -37,13 +37,7 @@ function App() {
     service: '',
     message: ''
   });
-  const [isVisible, setIsVisible] = useState({
-    about: false,
-    services: false,
-    success: false,
-    blog: false,
-    contact: false
-  });
+  const [isVisible, setIsVisible] = useState({});
 
   useEffect(() => {
     setAnimationClass('animate-fade-in');
@@ -205,18 +199,18 @@ function App() {
     <div className="min-h-screen bg-white overflow-x-hidden">
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md border-b border-gray-100 z-50 shadow-sm">
-        <div className="container mx-auto px-2 sm:px-4 lg:px-6">
-          <div className="flex items-center justify-between h-12">
-            <div className="flex items-center gap-1">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center shadow-lg animate-pulse-glow">
-                <UserCheck className="w-4 h-4 text-white" />
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-20">
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center shadow-lg animate-pulse-glow">
+                <UserCheck className="w-7 h-7 text-white" />
               </div>
               <div>
-                <span className="text-base font-bold text-gray-900">جاهز للتوظيف</span>
+                <span className="text-2xl font-bold text-gray-900">جاهز للتوظيف</span>
                 <div className="text-xs text-blue-600 font-medium">شريكك في النجاح المهني</div>
               </div>
             </div>
-            <div className="hidden md:flex items-center gap-4">
+            <div className="hidden md:flex items-center gap-8">
               <a href="#home" className="nav-link text-gray-700 hover:text-blue-600 font-medium">الرئيسية</a>
               <a href="#about" className="nav-link text-gray-700 hover:text-blue-600 font-medium">من نحن</a>
               <a href="#services" className="nav-link text-gray-700 hover:text-blue-600 font-medium">خدماتنا</a>
@@ -224,8 +218,8 @@ function App() {
               <a href="#blog" className="nav-link text-gray-700 hover:text-blue-600 font-medium">المدونة</a>
               <a href="#contact" className="nav-link text-gray-700 hover:text-blue-600 font-medium">تواصل معنا</a>
             </div>
-            <button className="btn-primary flex items-center gap-1 text-xs px-3 py-2">
-              <Sparkles className="w-3 h-3" />
+            <button className="btn-primary flex items-center gap-2">
+              <Sparkles className="w-5 h-5" />
               ابدأ الآن
             </button>
           </div>
@@ -233,37 +227,44 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="relative pt-14 pb-20 bg-gradient-to-br from-blue-50 via-white to-indigo-50 overflow-hidden">
+      <section id="home" className="relative pt-20 pb-32 bg-gradient-to-br from-blue-50 via-white to-indigo-50 overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-40"></div>
         <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-float"></div>
         <div className="absolute bottom-20 right-10 w-72 h-72 bg-indigo-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-float" style={{animationDelay: '2s'}}></div>
         
-        <div className="container mx-auto px-2 sm:px-4 lg:px-6 relative">
-          <div className="text-center py-12">
-            <div className={`${animationClass} max-w-4xl mx-auto`}>
-              <div className="inline-flex items-center gap-1 bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-medium mb-4 animate-bounce-in">
-                <Zap className="w-3 h-3" />
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="text-center py-24">
+            <div className={`${animationClass} max-w-5xl mx-auto`}>
+              <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-medium mb-8 animate-bounce-in">
+                <Zap className="w-4 h-4" />
                 <span>أكثر من 500 عميل حصل على وظيفة أحلامه</span>
               </div>
-              <h1 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4 leading-tight animate-slide-up">
-                <span className="text-gradient block mb-1">
+              
+              <h1 className="text-4xl md:text-7xl font-bold text-gray-900 mb-8 leading-tight animate-slide-up">
+                <span className="text-gradient block mb-2">
                   جاهز للتوظيف
                 </span>
-                <span className="text-xl md:text-2xl text-gray-700 font-semibold">نصنع لك سيرة ذاتية وصفحة لينكدإن وخطاب توظيفي</span>
-                <span className="block text-lg md:text-xl text-blue-600 mt-2 font-bold">يفتح لك أبواب الفرص في السوق السعودي</span>
+                <span className="text-3xl md:text-5xl text-gray-700 font-semibold">
+                  نصنع لك سيرة ذاتية وصفحة لينكدإن وخطاب توظيفي
+                </span>
+                <span className="block text-2xl md:text-4xl text-blue-600 mt-4 font-bold">
+                  يفتح لك أبواب الفرص في السوق السعودي
+                </span>
               </h1>
-              <p className="hero-text text-base md:text-lg text-gray-600 mb-6 max-w-2xl mx-auto leading-relaxed animate-slide-up-delay-1">
-                نجمع بين الخبرة العملية والمعايير العالمية لنقدّم لك هوية مهنية متكاملة تليق بك وتجذب أصحاب العمل.
+              
+              <p className="hero-text text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed animate-slide-up-delay-1">
+                نجمع بين الخبرة العملية والمعايير العالمية لنقدّم لك هوية مهنية متكاملة تليق بك وتجذب أصحاب العمل. 
                 <span className="text-blue-600 font-semibold"> رحلتك نحو الوظيفة المثالية تبدأ من هنا!</span>
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 justify-center items-center animate-slide-up-delay-2">
-                <button className="btn-primary flex items-center gap-2 text-base px-5 py-2">
-                  <Sparkles className="w-4 h-4" />
+              
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-slide-up-delay-2">
+                <button className="btn-primary flex items-center gap-3 text-lg px-8 py-4">
+                  <Sparkles className="w-6 h-6" />
                   ابدأ رحلتك الآن
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-5 h-5" />
                 </button>
-                <button className="btn-secondary flex items-center gap-2 text-base px-5 py-2">
-                  <BookOpen className="w-4 h-4" />
+                <button className="btn-secondary flex items-center gap-3 text-lg px-8 py-4">
+                  <BookOpen className="w-6 h-6" />
                   شاهد خدماتنا
                 </button>
               </div>
@@ -271,7 +272,7 @@ function App() {
           </div>
 
           {/* Quick Services Overview */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mt-10 animate-slide-up-delay-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-20 animate-slide-up-delay-3">
             {[
               { icon: CheckCircle2, text: "كتابة وتعديل السيرة الذاتية (ATS)", color: "text-green-600" },
               { icon: CheckCircle2, text: "تحسين صفحات لينكدإن", color: "text-blue-600" },
@@ -292,7 +293,7 @@ function App() {
       {/* Stats Section */}
       <section className="py-20 bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-dots-pattern opacity-20"></div>
-        <div className="container mx-auto px-2 sm:px-4 lg:px-6 relative">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">أرقام تتحدث عن نجاحنا</h2>
             <p className="text-xl text-blue-100">إنجازات حقيقية مع عملائنا الكرام</p>
@@ -316,9 +317,9 @@ function App() {
 
       {/* About Section */}
       <section id="about" className={`py-24 bg-gray-50 fade-in-section ${isVisible.about ? 'is-visible' : ''}`}>
-        <div className="container mx-auto px-2 sm:px-4 lg:px-6">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <div className="inline-flex items-center gap-1 bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-medium mb-6">
+            <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
               <Heart className="w-4 h-4" />
               <span>قصتنا</span>
             </div>
@@ -377,20 +378,21 @@ function App() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className={`py-16 bg-white fade-in-section ${isVisible.services ? 'is-visible' : ''}`}>
-        <div className="container mx-auto px-2 sm:px-4 lg:px-6">
-          <div className="text-center mb-10">
-            <div className="inline-flex items-center gap-1 bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-medium mb-3">
-              <Briefcase className="w-3 h-3" />
+      <section id="services" className={`py-24 bg-white fade-in-section ${isVisible.services ? 'is-visible' : ''}`}>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <Briefcase className="w-4 h-4" />
               <span>خدماتنا المتميزة</span>
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">خدماتنا</h2>
-            <p className="text-base text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">خدماتنا</h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               نقدم لك مجموعة شاملة من الخدمات المهنية المصممة خصيصاً لتعزيز فرصك الوظيفية في السوق السعودي
             </p>
-            <div className="w-16 h-1 bg-gradient-to-r from-green-600 to-blue-600 mx-auto mt-4 rounded-full"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-green-600 to-blue-600 mx-auto mt-8 rounded-full"></div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
             {services.map((service, index) => (
               <div 
                 key={index} 
@@ -449,18 +451,19 @@ function App() {
       </section>
 
       {/* Success Stories Section */}
-      <section id="success" className={`py-16 bg-gray-50 fade-in-section ${isVisible.success ? 'is-visible' : ''}`}>
-        <div className="container mx-auto px-2 sm:px-4 lg:px-6">
-          <div className="text-center mb-10">
-            <div className="inline-flex items-center gap-1 bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-medium mb-3">
-              <Award className="w-3 h-3" />
+      <section id="success" className={`py-24 bg-gray-50 fade-in-section ${isVisible.success ? 'is-visible' : ''}`}>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <Award className="w-4 h-4" />
               <span>نجاحات حقيقية</span>
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">قصص النجاح</h2>
-            <p className="text-base text-gray-600 max-w-xl mx-auto">شاهد كيف غيرنا حياة عملائنا المهنية وساعدناهم في تحقيق أحلامهم</p>
-            <div className="w-16 h-1 bg-gradient-to-r from-green-600 to-blue-600 mx-auto mt-4 rounded-full"></div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">قصص النجاح</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">شاهد كيف غيرنا حياة عملائنا المهنية وساعدناهم في تحقيق أحلامهم</p>
+            <div className="w-24 h-1 bg-gradient-to-r from-green-600 to-blue-600 mx-auto mt-8 rounded-full"></div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
             {testimonials.map((testimonial, index) => (
               <div 
                 key={index} 
@@ -515,18 +518,19 @@ function App() {
       </section>
 
       {/* Blog Section */}
-      <section id="blog" className={`py-16 bg-white fade-in-section ${isVisible.blog ? 'is-visible' : ''}`}>
-        <div className="container mx-auto px-2 sm:px-4 lg:px-6">
-          <div className="text-center mb-10">
-            <div className="inline-flex items-center gap-1 bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-medium mb-3">
-              <BookOpen className="w-3 h-3" />
+      <section id="blog" className={`py-24 bg-white fade-in-section ${isVisible.blog ? 'is-visible' : ''}`}>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center gap-2 bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <BookOpen className="w-4 h-4" />
               <span>مقالات مفيدة</span>
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">المدونة</h2>
-            <p className="text-base text-gray-600 max-w-xl mx-auto">نصائح وإرشادات مهنية لمساعدتك في رحلة البحث عن عمل</p>
-            <div className="w-16 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto mt-4 rounded-full"></div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">المدونة</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">نصائح وإرشادات مهنية لمساعدتك في رحلة البحث عن عمل</p>
+            <div className="w-24 h-1 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto mt-8 rounded-full"></div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {blogPosts.map((post, index) => (
               <article 
                 key={index} 
@@ -550,18 +554,19 @@ function App() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-2 sm:px-4 lg:px-6">
-          <div className="text-center mb-10">
-            <div className="inline-flex items-center gap-1 bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-xs font-medium mb-3">
-              <MessageCircle className="w-3 h-3" />
+      <section className="py-24 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center gap-2 bg-orange-100 text-orange-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <MessageCircle className="w-4 h-4" />
               <span>أسئلة شائعة</span>
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">الأسئلة الشائعة</h2>
-            <p className="text-base text-gray-600">إجابات على أكثر الأسئلة التي يطرحها عملاؤنا</p>
-            <div className="w-16 h-1 bg-gradient-to-r from-orange-600 to-red-600 mx-auto mt-4 rounded-full"></div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">الأسئلة الشائعة</h2>
+            <p className="text-xl text-gray-600">إجابات على أكثر الأسئلة التي يطرحها عملاؤنا</p>
+            <div className="w-24 h-1 bg-gradient-to-r from-orange-600 to-red-600 mx-auto mt-8 rounded-full"></div>
           </div>
-          <div className="max-w-2xl mx-auto">
+
+          <div className="max-w-4xl mx-auto">
             {faqs.map((faq, index) => (
               <div key={index} className="card-hover bg-white rounded-2xl p-8 mb-6 shadow-elegant border border-gray-100">
                 <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-3">
@@ -576,18 +581,20 @@ function App() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className={`py-16 bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white relative overflow-hidden fade-in-section ${isVisible.contact ? 'is-visible' : ''}`}>
-        <div className="container mx-auto px-2 sm:px-4 lg:px-6 relative">
-          <div className="text-center mb-10">
-            <div className="inline-flex items-center gap-1 bg-white/20 text-white px-3 py-1 rounded-full text-xs font-medium mb-3 backdrop-blur-sm">
-              <Phone className="w-3 h-3" />
+      <section id="contact" className={`py-24 bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white relative overflow-hidden fade-in-section ${isVisible.contact ? 'is-visible' : ''}`}>
+        <div className="absolute inset-0 bg-dots-pattern opacity-20"></div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="text-center mb-20">
+            <div className="inline-flex items-center gap-2 bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium mb-6 backdrop-blur-sm">
+              <Phone className="w-4 h-4" />
               <span>تواصل معنا</span>
             </div>
-            <h2 className="text-2xl md:text-3xl font-bold mb-3">تواصل معنا</h2>
-            <p className="text-base text-blue-100 max-w-xl mx-auto">ابدأ رحلتك المهنية الآن واحصل على استشارة مجانية</p>
-            <div className="w-16 h-1 bg-white mx-auto mt-4 rounded-full"></div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">تواصل معنا</h2>
+            <p className="text-xl text-blue-100 max-w-3xl mx-auto">ابدأ رحلتك المهنية الآن واحصل على استشارة مجانية</p>
+            <div className="w-24 h-1 bg-white mx-auto mt-8 rounded-full"></div>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Contact Info */}
             <div className="animate-slide-right">
               <h3 className="text-3xl font-bold mb-10">معلومات الاتصال</h3>
@@ -726,22 +733,22 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-10">
-        <div className="container mx-auto px-2 sm:px-4 lg:px-6">
+      <footer className="bg-gray-900 text-white py-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <div className="flex items-center justify-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl flex items-center justify-center shadow-lg">
-                <UserCheck className="w-6 h-6 text-white" />
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl flex items-center justify-center shadow-lg">
+                <UserCheck className="w-8 h-8 text-white" />
               </div>
               <div>
-                <span className="text-lg font-bold">جاهز للتوظيف</span>
-                <div className="text-xs text-blue-400">شريكك في النجاح المهني</div>
+                <span className="text-2xl font-bold">جاهز للتوظيف</span>
+                <div className="text-sm text-blue-400">شريكك في النجاح المهني</div>
               </div>
             </div>
-            <p className="text-gray-400 mb-4 max-w-xl mx-auto text-base leading-relaxed">
+            <p className="text-gray-400 mb-8 max-w-3xl mx-auto text-lg leading-relaxed">
               شريكك الموثوق في رحلة البحث عن عمل. نساعدك على تقديم أفضل نسخة من نفسك للحصول على الوظيفة التي تستحقها في السوق السعودي.
             </p>
-            <div className="flex justify-center gap-4 mb-6">
+            <div className="flex justify-center gap-8 mb-10">
               <a href="mailto:jahez.team.info@gmail.com" className="text-gray-400 hover:text-white transition-colors p-3 bg-gray-800 rounded-xl hover:bg-gray-700">
                 <Mail className="w-7 h-7" />
               </a>
@@ -752,9 +759,9 @@ function App() {
                 <Linkedin className="w-7 h-7" />
               </a>
             </div>
-            <div className="border-t border-gray-800 pt-4">
-              <p className="text-gray-500 text-xs">
-                © 2024 جاهز للتوظيف. جميع الحقوق محفوظة. | صُنع بـ <Heart className="w-3 h-3 inline text-red-500" /> في المملكة العربية السعودية
+            <div className="border-t border-gray-800 pt-8">
+              <p className="text-gray-500">
+                © 2024 جاهز للتوظيف. جميع الحقوق محفوظة. | صُنع بـ <Heart className="w-4 h-4 inline text-red-500" /> في المملكة العربية السعودية
               </p>
             </div>
           </div>
